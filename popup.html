@@ -1,0 +1,55 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Deeker Chrome Extension</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+        min-width: 300px;
+      }
+      h3{
+        text-align: center;
+      }
+      p{
+        padding: 1px;
+        font-size: 10px;
+      }
+      #text-box {
+        max-width: 400px;
+        min-height: 100px;
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+        border-radius: 1px;
+        padding: 5px;
+        margin: 5px;
+      }
+      #status{
+        font-size: 13px;
+        padding: 5px;
+        margin-top: 10px;
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <h3>Deeker to English</h3>
+    <p>Select text on page or enter text into box and then click translate.</p>
+    <div id="text-box" contenteditable="true"></div>
+    <button id="btn">Translate</button>
+    <div id="status"></div>
+  </body>
+</html>
